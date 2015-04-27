@@ -69,15 +69,6 @@ if (staticEnvString.toLowerCase() === env.toLowerCase()) {
   });
 }
 
-/**
- * Catch 404 and forward to error handler.
- */
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
 // var routes = require('./routes/index');
 // var users = require('./routes/users');
 
@@ -123,6 +114,16 @@ function normalizePort(val) {
 
   return false;
 }
+
+/**
+ * Catch 404 and forward to error handler.
+ */
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
 
 /**
  * Event listener for HTTP server "error" event.
